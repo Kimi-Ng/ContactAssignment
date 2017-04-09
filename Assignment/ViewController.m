@@ -131,7 +131,7 @@ NSString * const InputFileName = @"input"; // Supporting Files/input.txt
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpView];
-    
+    //main logic to solve the problem
     NSArray *input = [self parseInputFile];
     self.contactGraph = [[Graph alloc] init];
     [self.contactGraph constructAdjacentLists:input];
@@ -153,6 +153,8 @@ NSString * const InputFileName = @"input"; // Supporting Files/input.txt
     return YES;
 }
 
+#pragma mark -- View
+
 - (void)setUpView
 {
     self.collectionView = ({
@@ -166,7 +168,6 @@ NSString * const InputFileName = @"input"; // Supporting Files/input.txt
     });
     [self.view addSubview:self.collectionView];
 }
-
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -223,7 +224,7 @@ NSString * const InputFileName = @"input"; // Supporting Files/input.txt
 
 #pragma mark -- File Parser
 /**
-** Each string token in the file should be separeted by white space, return character, or comma
+** Each string token in the file should be separated by white space, return character, or comma
 **/
 - (NSArray *)parseInputFile
 {

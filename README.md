@@ -1,11 +1,14 @@
 # Contact Assignment
 ## Introduction
 This project solves a contact relation problem. It tries to group all related contacts togeter.<br/>
-Two contacts are defined related if the name or telephone are directly equal or indirectly equal to another contacts.<br/>
+Two contacts are defined related if the name or telephone are directly equal or indirectly equal to another contacts.
+
 E.g.. <br/>
 For (A, 123), (B, 456), (C, 123), (D, 789), (E, 789) <br/>
 we would generate two groups,<br/>
 group1: (A, 123), (B, 456), (C, 123) and group2:(D, 789), (E, 789)
+
+The solution logic in implemented in ViewController.m using Graph data structure
 
 ## Input file
 Input file should be named "input.txt" and put in the path "Supporting Files/input.txt"<br/>
