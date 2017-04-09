@@ -202,7 +202,7 @@ NSString * const InputFileName = @"input"; // Supporting Files/input.txt
     NSUInteger totalContactsCount = 0;
     
     for (NSSet *set in groups) {
-        NSLog(@"Merged Set %ld:",setCount);
+        NSLog(@"Merged Set %d:",setCount);
         NSMutableSet *mergedSet = [[NSMutableSet alloc] init];
         for (NSString *label in set.allObjects) {
             NSSet *contact = [self.contactGraph.contactDict objectForKey:label];
@@ -212,12 +212,12 @@ NSString * const InputFileName = @"input"; // Supporting Files/input.txt
             }
         }
         NSLog(@"%@", mergedSet);
-        NSString *prefix = [NSString stringWithFormat:@"Merged Set %ld:\n",setCount];
+        NSString *prefix = [NSString stringWithFormat:@"Merged Set %d:\n",setCount];
         [self.viewDataSource addObject:[prefix stringByAppendingString:[[mergedSet allObjects] componentsJoinedByString:@"\n"]]];
         ++setCount;
     }
     if (self.viewDataSource.count) {
-        [self.viewDataSource insertObject:[NSString stringWithFormat:@"Found %ld contacts.", totalContactsCount] atIndex:0];
+        [self.viewDataSource insertObject:[NSString stringWithFormat:@"Found %d contacts.", totalContactsCount] atIndex:0];
     }
 }
 
